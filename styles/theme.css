@@ -1,0 +1,361 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  --background: #ffffff;
+  --foreground: oklch(0.145 0 0);
+  --card: #ffffff;
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: #030213;
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0.0058 264.53);
+  --secondary-foreground: #030213;
+  --muted: #ececf0;
+  --muted-foreground: #717182;
+  --accent: #e9ebef;
+  --accent-foreground: #030213;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #030213;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /**
+  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
+  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
+  */
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+}
+
+/* 
+ * ==========================================
+ * GUILDBOARD ELEGANT THEMES (Tailwind v4)
+ * ==========================================
+ */
+
+/* 1. Obsidiana (Dark Mode Clásico/Gremio) */
+[data-theme='obsidian'], :root {
+  --quest-bg: #0f1115;
+  --quest-header-from: #13151a;
+  --quest-header-via: #16191f;
+  --quest-card-from: #16191f;
+  --quest-card-to: #1a1d24;
+  
+  --quest-border: rgba(255, 255, 255, 0.05);
+  --quest-border-card: rgba(255, 255, 255, 0.08);
+  --quest-border-hover: rgba(184, 144, 91, 0.3); /* copper border */
+  
+  --quest-accent: #b8905b; /* Muted copper/amber */
+  --quest-accent-glow: rgba(184, 144, 91, 0.2);
+  --quest-accent-bg-from: #a37c4d;
+  --quest-accent-bg-to: #8e6a40;
+  --quest-accent-hover: #b8905b;
+  
+  --quest-text-title: #e2e8f0;
+  --quest-text-main: #cbd5e1;
+  --quest-text-muted: #64748b;
+
+  --cat-cardio-from: #991b1b;
+  --cat-cardio-to: #7f1d1d;
+  --cat-strength-from: #1e3a8a;
+  --cat-strength-to: #1e40af;
+  --cat-flex-from: #14532d;
+  --cat-flex-to: #166534;
+
+  --diff-easy: #4ade80;
+  --diff-medium: #fbbf24;
+  --diff-hard: #f97316;
+  --diff-epic: #c084fc;
+}
+
+/* 2. Pergamino (Light Mode Elegante) */
+[data-theme='parchment'] {
+  --quest-bg: #fdfbf7; /* Very soft sepia/cream */
+  --quest-header-from: #ffffff;
+  --quest-header-via: #faf9f5;
+  --quest-card-from: #ffffff;
+  --quest-card-to: #ffffff;
+  
+  --quest-border: rgba(0, 0, 0, 0.06);
+  --quest-border-card: rgba(0, 0, 0, 0.08);
+  --quest-border-hover: rgba(15, 23, 42, 0.15);
+  
+  --quest-accent: #1e293b; /* Slate 800 */
+  --quest-accent-glow: rgba(30, 41, 59, 0.1);
+  --quest-accent-bg-from: #0f172a;
+  --quest-accent-bg-to: #1e293b;
+  --quest-accent-hover: #334155;
+  
+  --quest-text-title: #0f172a;
+  --quest-text-main: #334155;
+  --quest-text-muted: #64748b;
+
+  --cat-cardio-from: #fee2e2;
+  --cat-cardio-to: #fecaca;
+  --cat-strength-from: #dbeafe;
+  --cat-strength-to: #bfdbfe;
+  --cat-flex-from: #dcfce7;
+  --cat-flex-to: #bbf7d0;
+
+  --diff-easy: #15803d;
+  --diff-medium: #b45309;
+  --diff-hard: #c2410c;
+  --diff-epic: #7e22ce;
+}
+
+/* 3. Bosque Profundo (Druida/Naturaleza) */
+[data-theme='forest'] {
+  --quest-bg: #111c18; /* Extremely dark desaturated green */
+  --quest-header-from: #14221d;
+  --quest-header-via: #162722;
+  --quest-card-from: #162722;
+  --quest-card-to: #1b302a;
+  
+  --quest-border: rgba(255, 255, 255, 0.04);
+  --quest-border-card: rgba(255, 255, 255, 0.06);
+  --quest-border-hover: rgba(123, 156, 139, 0.3);
+  
+  --quest-accent: #7b9c8b; /* Light sage */
+  --quest-accent-glow: rgba(123, 156, 139, 0.15);
+  --quest-accent-bg-from: #3c5448;
+  --quest-accent-bg-to: #486355;
+  --quest-accent-hover: #507a64;
+  
+  --quest-text-title: #e2e8f0;
+  --quest-text-main: #d1e0d7;
+  --quest-text-muted: #738a7e;
+
+  --cat-cardio-from: #7f1d1d;
+  --cat-cardio-to: #991b1b;
+  --cat-strength-from: #1e3a8a;
+  --cat-strength-to: #1e40af;
+  --cat-flex-from: #14532d;
+  --cat-flex-to: #166534;
+
+  --diff-easy: #4ade80;
+  --diff-medium: #fbbf24;
+  --diff-hard: #f97316;
+  --diff-epic: #c084fc;
+}
+
+/* 4. Acero Valyrio (Gris/Azul Minimalista) */
+[data-theme='valyrian'] {
+  --quest-bg: #0f172a; /* Slate 900 */
+  --quest-header-from: #1e293b;
+  --quest-header-via: #334155;
+  --quest-card-from: #1e293b;
+  --quest-card-to: #0f172a;
+  
+  --quest-border: rgba(255, 255, 255, 0.06);
+  --quest-border-card: rgba(255, 255, 255, 0.08);
+  --quest-border-hover: rgba(147, 197, 253, 0.3); /* Blue 300 */
+  
+  --quest-accent: #93c5fd; /* Soft ice blue */
+  --quest-accent-glow: rgba(147, 197, 253, 0.15);
+  --quest-accent-bg-from: #334155;
+  --quest-accent-bg-to: #475569;
+  --quest-accent-hover: #64748b;
+  
+  --quest-text-title: #f8fafc;
+  --quest-text-main: #e2e8f0;
+  --quest-text-muted: #94a3b8;
+
+  --cat-cardio-from: #7f1d1d;
+  --cat-cardio-to: #991b1b;
+  --cat-strength-from: #1e3a8a;
+  --cat-strength-to: #1e40af;
+  --cat-flex-from: #14532d;
+  --cat-flex-to: #166534;
+
+  --diff-easy: #4ade80;
+  --diff-medium: #fbbf24;
+  --diff-hard: #f97316;
+  --diff-epic: #c084fc;
+}
+
+@theme inline {
+  --color-quest-bg: var(--quest-bg);
+  --color-quest-header-from: var(--quest-header-from);
+  --color-quest-header-via: var(--quest-header-via);
+  --color-quest-card-from: var(--quest-card-from);
+  --color-quest-card-to: var(--quest-card-to);
+  
+  --color-quest-border: var(--quest-border);
+  --color-quest-border-card: var(--quest-border-card);
+  --color-quest-border-hover: var(--quest-border-hover);
+  
+  --color-quest-accent: var(--quest-accent);
+  --color-quest-accent-glow: var(--quest-accent-glow);
+  --color-quest-accent-bg-from: var(--quest-accent-bg-from);
+  --color-quest-accent-bg-to: var(--quest-accent-bg-to);
+  --color-quest-accent-hover: var(--quest-accent-hover);
+  
+  --color-quest-text-title: var(--quest-text-title);
+  --color-quest-text-main: var(--quest-text-main);
+  --color-quest-text-muted: var(--quest-text-muted);
+
+  --color-cat-cardio-from: var(--cat-cardio-from);
+  --color-cat-cardio-to: var(--cat-cardio-to);
+  --color-cat-strength-from: var(--cat-strength-from);
+  --color-cat-strength-to: var(--cat-strength-to);
+  --color-cat-flex-from: var(--cat-flex-from);
+  --color-cat-flex-to: var(--cat-flex-to);
+
+  --color-diff-easy: var(--diff-easy);
+  --color-diff-medium: var(--diff-medium);
+  --color-diff-hard: var(--diff-hard);
+  --color-diff-epic: var(--diff-epic);
+}

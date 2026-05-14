@@ -1,0 +1,36 @@
+/**
+ * index.css — Punto de entrada del sistema de estilos
+ *
+ * Este es el único archivo CSS que importa main.tsx.
+ * A partir de aquí se carga todo el sistema de estilos de la aplicación.
+ *
+ * ORDEN DE IMPORTS — importante con Tailwind v4:
+ *
+ *   1. @import 'tailwindcss'
+ *      → Genera todas las clases utilitarias (flex, text-xl, bg-slate-900...)
+ *      → Debe ir PRIMERO: las demás capas pueden sobreescribir sus estilos base
+ *
+ *   2. @import 'tw-animate-css'
+ *      → Añade clases de animación extra (animate-accordion-down, fade-in-0...)
+ *      → Usadas por los componentes de shadcn/ui
+ *
+ *   3. @import './theme.css'
+ *      → Variables CSS de nuestro sistema de diseño (colores, radios, fuentes)
+ *      → Va al final para poder sobreescribir valores por defecto de Tailwind
+ *
+ * Nota sobre las fuentes:
+ * Las fuentes Google (Cinzel, Inter) se cargan en index.html con <link>,
+ * no aquí. Motivo: los @import de URL externas deben ir antes de cualquier
+ * regla CSS, pero Tailwind genera reglas al procesarse. Cargar fuentes en
+ * HTML es también más rápido (el navegador las descarga en paralelo).
+ */
+
+/* Tailwind CSS v4 — con el plugin @tailwindcss/vite, esta directiva
+   le indica al plugin dónde inyectar todas las utilidades de Tailwind */
+@import 'tailwindcss';
+
+/* Animaciones extra de shadcn/ui (accordion, fade, slide...) */
+@import 'tw-animate-css';
+
+/* Variables CSS del sistema de diseño del proyecto */
+@import './theme.css';
