@@ -1,4 +1,4 @@
-# 🏰 GuildBoard — Tablón de Misiones
+# 🏰 QuestFit — Tablón de Misiones
 
 > **Proyecto académico** | Fase 1 + Fase 2 del Briefing  
 > Aplicación web que convierte rutinas de ejercicio en misiones de rol (RPG), recompensando al usuario con EXP, Oro y subidas de nivel.
@@ -7,7 +7,7 @@
 
 ## 📋 Índice
 
-1. [¿Qué es GuildBoard?](#qué-es-guildboard)
+1. [¿Qué es QuestFit?](#qué-es-questfit)
 2. [Tecnologías utilizadas](#tecnologías-utilizadas)
 3. [Estructura del proyecto](#estructura-del-proyecto)
 4. [Cómo ejecutar el proyecto](#cómo-ejecutar-el-proyecto)
@@ -19,9 +19,9 @@
 
 ---
 
-## ¿Qué es GuildBoard?
+## ¿Qué es QuestFit?
 
-GuildBoard es una **Single Page Application (SPA)** diseñada bajo una estricta arquitectura **Mobile-First** que transforma las rutinas de entrenamiento físico en una experiencia gamificada. Inspirado en los tablones de misiones de los juegos de rol (RPG), cada ejercicio se presenta como una **misión** con recompensas, progreso, límite de tiempo y dificultad.
+QuestFit es una **Single Page Application (SPA)** diseñada bajo una estricta arquitectura **Mobile-First** que transforma las rutinas de entrenamiento físico en una experiencia gamificada. Inspirado en los tablones de misiones de los juegos de rol (RPG), cada ejercicio se presenta como una **misión** con recompensas, progreso, límite de tiempo y dificultad.
 
 Este repositorio representa la culminación de la **Fase 1 y 2 del Briefing**: prototipado visual avanzado, desarrollo front-end en React y sistemas de diseño escalables.
 
@@ -45,7 +45,7 @@ Este repositorio representa la culminación de la **Fase 1 y 2 del Briefing**: p
 ## Estructura del proyecto
 
 ```text
-GuildBoard/
+QuestFit/
 │
 ├── 📄 index.html              ← Punto de entrada HTML
 ├── 📄 package.json            ← Dependencias y scripts npm

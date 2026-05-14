@@ -45,7 +45,7 @@ import { ThemeProvider } from './components/ThemeProvider';
  */
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ThemeProvider defaultTheme="obsidian" storageKey="guildboard-theme">
+    <ThemeProvider defaultTheme="obsidian" storageKey="questfit-theme">
       <App />
     </ThemeProvider>
   </StrictMode>
