@@ -28,7 +28,7 @@ QuestFit nace bajo la premisa de unir dos mundos: el esfuerzo físico real y los
 
 ## 2. Stack Tecnológico Explicado
 
-Para lograr un rendimiento de aplicación nativa, hemos escogido un stack moderno. Aquí tienes la explicación de cada pieza (con analogías útiles para estudiantes de 1º de DAM):
+Para lograr un rendimiento de aplicación nativa, hemos escogido un stack moderno. Aquí tienes la explicación de cada pieza: 
 
 *   **React 19:** Es una librería de JavaScript creada por Facebook. En lugar de programar una página entera, programamos **Componentes** (pequeños bloques de Lego como un Botón, una Tarjeta, o un Menú). *Analogía: Cada componente es como una Clase en Java que devuelve código visual en lugar de datos.*
 *   **TypeScript (TS):** Es JavaScript "con esteroides". JavaScript puro te permite meter un texto en una variable que debería ser un número, y la app explotará en el móvil del usuario. TypeScript obliga a definir el **Tipo de Dato** exacto. *Analogía: Te da la misma seguridad y restricciones estrictas que tienes al programar en Java o C#.*
@@ -122,4 +122,3 @@ El último paso de todo desarrollador independiente.
 
 ---
 
-> **Consejo final como estudiante de DAM:** Domina las Fases 3 y 4 este año. Conecta tu conocimiento fresco de SQL y Java con este Frontend espectacular. Cuando lo consigas, tendrás el nivel técnico de un perfil Full-Stack Junior altamente demandado en el mercado español.
