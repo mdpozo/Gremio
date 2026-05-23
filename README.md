@@ -1,124 +1,165 @@
-# 🏰 QuestFit — Tablón de Misiones (Documentación Exhaustiva)
+# 🏰 QuestFit — Tablón de Misiones (Documentación Académica Exhaustiva)
 
-> **Proyecto Académico de Desarrollo Multiplataforma (DAM)**  
-> **Objetivo Final:** Publicación de la aplicación en Google Play Store y Apple App Store.  
-> Aplicación web (futura app nativa) que gamifica el deporte convirtiendo rutinas de entrenamiento físico en misiones de rol (RPG), recompensando al usuario con Puntos de Experiencia (EXP), Oro y subidas de nivel.
-
----
-
-## 📋 Índice General
-
-1. [Introducción y Concepto Core](#1-introducción-y-concepto-core)
-2. [Stack Tecnológico Explicado](#2-stack-tecnológico-explicado)
-3. [Arquitectura Mobile-First](#3-arquitectura-mobile-first)
-4. [Sistema de Temas Dinámicos (Design Tokens)](#4-sistema-de-temas-dinámicos)
-5. [Laboratorio de Diseño (Component Playground)](#5-laboratorio-de-diseño)
-6. [🗺️ ROADMAP HACIA LAS APP STORES (Guía Paso a Paso)](#6-️-roadmap-hacia-las-app-stores)
+> **Proyecto Fin de Grado — Desarrollo de Aplicaciones Multiplataforma (DAM)**  
+> **Autor/Desarrollador:** Aventurero del Gremio DAM  
+> **Propósito del Documento:** Servir como guía teórica y técnica exhaustiva para la defensa del proyecto ante el tribunal académico.
 
 ---
 
-## 1. Introducción y Concepto Core
-
-QuestFit nace bajo la premisa de unir dos mundos: el esfuerzo físico real y los sistemas de recompensa de los videojuegos. Es una **Single Page Application (SPA)**. 
-
-> **¿Qué significa SPA?**  
-> En una web tradicional (como Wikipedia), cada vez que haces clic en un enlace, el navegador descarga una página HTML nueva por completo. En una **SPA** (como Instagram o Netflix web), solo se descarga **un único archivo HTML** (`index.html`). A partir de ahí, JavaScript (React) se encarga de "borrar y pintar" nuevos elementos en la pantalla a la velocidad del rayo, sin que la página parpadee ni se recargue nunca. Esto es vital para engañar al cerebro y hacer que la web se sienta como una app nativa descargada en el móvil.
-
----
-
-## 2. Stack Tecnológico Explicado
-
-Para lograr un rendimiento de aplicación nativa, hemos escogido un stack moderno. Aquí tienes la explicación de cada pieza: 
-
-*   **React 19:** Es una librería de JavaScript creada por Facebook. En lugar de programar una página entera, programamos **Componentes** (pequeños bloques de Lego como un Botón, una Tarjeta, o un Menú). *Analogía: Cada componente es como una Clase en Java que devuelve código visual en lugar de datos.*
-*   **TypeScript (TS):** Es JavaScript "con esteroides". JavaScript puro te permite meter un texto en una variable que debería ser un número, y la app explotará en el móvil del usuario. TypeScript obliga a definir el **Tipo de Dato** exacto. *Analogía: Te da la misma seguridad y restricciones estrictas que tienes al programar en Java o C#.*
-*   **Tailwind CSS v4:** En lugar de tener un archivo `.css` externo gigante con miles de reglas, Tailwind nos permite escribir clases directamente en el HTML (ej: `class="text-red-500 font-bold"`). Esto agiliza el desarrollo enormemente y elimina código CSS muerto.
-*   **Vite:** Es el motor (bundler). Coge todos nuestros cientos de archivos `.tsx` (TypeScript + HTML) y los comprime en un solo archivo JavaScript optimizado que el navegador del móvil pueda entender al instante.
+## 📋 Índice General de Defensa
+1. [El Concepto Core y Gamificación RPG](#1-el-concepto-core-y-gamificación-rpg)
+2. [El Onboarding IPAQ: El Algoritmo Científico](#2-el-onboarding-ipaq-el-algoritmo-científico)
+3. [Fase 2: Conteo GPS Real y la Fórmula del Haversine](#3-fase-2-conteo-gps-real-y-la-fórmula-del-haversine)
+4. [La Seguridad en la Web Móvil: Contextos Seguros (Secure Contexts)](#4-la-seguridad-en-la-web-móvil-contextos-seguros-secure-contexts)
+5. [Accesibilidad y Experiencia Sensorial Dual (Voz y Haptics)](#5-accesibilidad-y-experiencia-sensorial-dual-voz-y-haptics)
+6. [Persistencia Local de Datos (LocalStorage vs SharedPreferences)](#6-persistencia-local-de-datos-localstorage-vs-sharedpreferences)
+7. [Stack Tecnológico Explicado (Para el Tribunal)](#7-stack-tecnológico-explicado-para-el-tribunal)
+8. [Arquitectura de Código y Mobile-First](#8-arquitectura-de-código-y-mobile-first)
+9. [🗺️ Hoja de Ruta de Desarrollo Incremental (Roadmap DAM)](#9-️-hoja-de-ruta-de-desarrollo-incremental-roadmap-dam)
 
 ---
 
-## 3. Arquitectura Mobile-First
+## 1. El Concepto Core y Gamificación RPG
 
-El código de esta aplicación ha sido estructurado para ser estrictamente móvil, preparándolo para su futura conversión a app de iOS/Android.
+**QuestFit** nace de una problemática social crítica: **el sedentarismo y la falta de adherencia al deporte**. Las aplicaciones deportivas tradicionales (como Nike Run Club o Strava) son excelentes para deportistas ya motivados, pero resultan aburridas y monótonas para el público sedentario o la gente joven que busca estímulos constantes.
 
-### ¿Cómo hemos logrado el contenedor móvil?
-En nuestro archivo `App.tsx`, el contenedor padre tiene las siguientes clases críticas:
-`w-full h-[100dvh] sm:max-w-md sm:h-[90vh] overflow-hidden flex flex-col`
+La solución de QuestFit es la **Gamificación Social RPG (Role Playing Game)**. Transformamos el esfuerzo físico en el "combate" de un héroe de videojuego:
+*   **Misiones:** Los entrenamientos son misiones asignadas por el Gremio.
+*   **Clases RPG:** Guerrero 🛡️ (Fuerza), Explorador 🏹 (Cardio) o Místico 🧘 (Flexibilidad).
+*   **Recompensas:** Al sudar en la realidad, el aventurero gana monedas de **Oro**, **Experiencia (XP)** y **Sube de Nivel** en la aplicación.
 
-*   `h-[100dvh]`: **Dynamic Viewport Height**. Es una medida revolucionaria. En los móviles, la barra de búsqueda de Chrome/Safari desaparece al hacer scroll. Si usamos el 100% clásico (`100vh`), nuestro contenido inferior (el menú) se escondería bajo el borde físico de la pantalla. `dvh` se recalcula matemáticamente cada vez que la barra del navegador se mueve, manteniendo la app anclada a la perfección.
-*   `sm:max-w-md`: En pantallas grandes (monitores), la app no se estira de lado a lado quedando horrenda. Se bloquea en 448px de ancho, imitando las proporciones de un iPhone Max en medio del monitor.
-*   **BottomNav:** Hemos prescindido de los clásicos menús laterales (Sidebars) de escritorio. Hemos creado `BottomNav.tsx`, anclado al fondo (`flex-shrink-0`), para que el usuario pueda navegar con el dedo pulgar.
-
----
-
-## 4. Sistema de Temas Dinámicos
-
-La app cuenta con un inyector de estilos que permite al usuario alternar entre modos (Obsidiana, Pergamino, Bosque, etc.). 
-
-**¿Cómo funciona esta magia por debajo?**
-1.  **Variables CSS (`theme.css`):** Definimos *Design Tokens*. En lugar de decir "fondo azul", decimos `--quest-bg: #121212`.
-2.  **El Contexto Global (`ThemeProvider.tsx`):** Usamos la API de React llamada *Context*. Funciona como un **Patrón Singleton** en Java. Es un "estado global" flotante. Cuando el usuario hace clic en el botón de cambiar tema, el `ThemeProvider` atrapa ese clic, guarda la decisión en la memoria del navegador (`localStorage`), y le inyecta al HTML base un atributo (ej. `data-theme="parchment"`).
-3.  **La reacción:** Al cambiar ese atributo, todas las variables CSS de la aplicación permutan al instante y Tailwind repinta los colores en microsegundos.
+> **¿Qué es una SPA (Single Page Application)?**  
+> QuestFit está estructurada como una SPA. A diferencia de las webs tradicionales donde cada clic recarga la página por completo, en una SPA solo se descarga **un único archivo HTML (`index.html`)** al inicio. JavaScript (React) se encarga de interceptar la navegación y sustituir componentes visuales en milisegundos en la pantalla del usuario. Esto crea una fluidez idéntica a la de una app nativa descargada en la tienda.
 
 ---
 
-## 5. Laboratorio de Diseño
+## 2. El Onboarding IPAQ: El Algoritmo Científico
 
-Hemos implementado un componente llamado `DesignPlayground.tsx`. ¿Por qué?
-Cuando trabajas en una empresa real como Desarrollador Front-End, no pruebas tus nuevos diseños de botones dentro de la pantalla real de la aplicación, porque los datos reales podrían distraerte o romper tu diseño. 
-El **Playground** es un lienzo en blanco aislado. Si vas a `App.tsx` y cambias la variable `const SHOW_PLAYGROUND = true;`, la app real desaparece y te deja un entorno de laboratorio para testear componentes (como la `QuestCardV1`) viendo cómo responden a los cambios de tamaño sin afectar al flujo del usuario.
+Para evitar un error común en la medicina deportiva, **QuestFit rechaza por completo el uso del IMC (Índice de Masa Corporal)** para calcular perfiles deportivos, ya que el IMC no distingue entre grasa y masa muscular, resultando en una métrica obsoleta y desfasada.
 
----
+En su lugar, implementamos el **IPAQ (International Physical Activity Questionnaire)**, un estándar científico internacional avalado por la Organización Mundial de la Salud (OMS) para evaluar el nivel de actividad física real basándose en hábitos de tiempo sentado y esfuerzo físico metabólico.
 
-## 6. 🗺️ ROADMAP HACIA LAS APP STORES
-
-Aquí está el mapa de ruta definitivo. Pasos detallados y técnicos de cómo llevaremos esta aplicación desde tu carpeta local de 1º de DAM hasta las pantallas de los teléfonos de los usuarios en todo el mundo.
-
-### ✅ FASE 1 y 2: Prototipado y Front-End (ACTUAL - COMPLETADA)
-**Lo que hemos conseguido:**
-*   Maquetación de la interfaz completa y responsiva.
-*   Componentización en React (tarjetas, botones, menús aislados).
-*   Mockup de datos: Los datos ahora mismo son estáticos (escritos en el código).
-
-### 🔲 FASE 3: Arquitectura de Base de Datos (Diseño del Motor)
-**Tu próximo paso académico (Conecta con tu asignatura de Bases de Datos).**
-La app necesita recordar quién es el usuario y qué misiones ha completado.
-*   **Paso 3.1: Diagrama ER (Entidad-Relación).** Tienes que diseñar cómo se relacionan los datos. Ejemplo:
-    *   Tabla `Users`: `id`, `username`, `email`, `password_hash`, `level`, `current_exp`, `gold`.
-    *   Tabla `Quests`: `id`, `title`, `description`, `category_id`, `difficulty_id`, `reward_gold`, `reward_exp`.
-    *   Tabla `User_Quest_Log`: `id`, `user_id`, `quest_id`, `completed_at`, `status`. (Para saber si un usuario tiene una misión en progreso o ya la cobró).
-*   **Paso 3.2: Creación del motor SQL.** Levantar una base de datos PostgreSQL o MySQL localmente.
-
-### 🔲 FASE 4: Back-End y API REST (El Cerebro)
-**Conecta con tu asignatura de Programación (Java).**
-La app web de React no puede hablar directamente con la Base de Datos (sería un riesgo de seguridad catastrófico, los hackers verían tus contraseñas en el código fuente de la web).
-*   **Paso 4.1: Spring Boot.** Desarrollaremos un servidor backend en Java usando Spring Boot.
-*   **Paso 4.2: Creación de la API REST.** Tu servidor Java tendrá "puertas" abiertas (Endpoints). 
-    *   Si React le hace un `GET` a `http://tu-servidor.com/api/quests`, Java conectará con MySQL, sacará las misiones, las transformará en un texto de formato JSON y se las devolverá a React para que las pinte en pantalla.
-    *   Si el usuario completa una misión, React hará un `POST` a `/api/quests/complete/5` y Java le sumará el oro al usuario en la base de datos.
-
-### 🔲 FASE 5: Autenticación y Seguridad (Cuentas de Usuario)
-*   **Paso 5.1: Registro/Login en React.** Crear la pantalla visual de iniciar sesión.
-*   **Paso 5.2: JWT (JSON Web Tokens).** Cuando un usuario ponga su contraseña en React, viaja a Java. Si es correcta, Java no devuelve "ok", devuelve un Token (una cadena de texto encriptada super larga). React guardará este Token en el móvil del usuario. A partir de ese momento, cada vez que React pida datos al servidor, le enseñará ese Token a Java como si fuera una "entrada de discoteca VIP" para demostrar quién es.
-
-### 🔲 FASE 6: Conversión a App Nativa Móvil (El gran salto)
-¿Cómo subimos una web hecha en React a Google Play si solo admiten código Java/Kotlin para Android, y Swift para iOS? ¡No vamos a reescribir la app entera!
-*   **La magia de "Capacitor" (de Ionic):** Capacitor es una herramienta que coge toda nuestra web de React y la "envuelve" en un navegador web invisible dentro de una App nativa vacía.
-*   **Paso 6.1: Instalar Capacitor.** En la consola ejecutaremos `npm install @capacitor/core`.
-*   **Paso 6.2: Funciones nativas.** Capacitor nos dará acceso al hardware del teléfono mediante plugins. Por ejemplo, en lugar de usar comandos web, usaremos código Capacitor para hacer vibrar el teléfono cuando completes una misión (`Haptics.vibrate()`), o enviaremos notificaciones Push reales al móvil del usuario.
-*   **Paso 6.3: Compilación.** Ejecutaremos `npx cap open android`, lo que abrirá *Android Studio*, y desde ahí le daremos al botón "Build APK" para generar el archivo instalable.
-
-### 🔲 FASE 7: Publicación en las Tiendas (Deployment final)
-El último paso de todo desarrollador independiente.
-*   **Para Android (Google Play Store):**
-    1. Hay que pagar una licencia de desarrollador de Google de pago único (unos ~25$).
-    2. Crearemos un archivo encriptado llamado "Keystore" para firmar digitalmente la app (garantiza que nadie más pueda subir actualizaciones de QuestFit haciéndose pasar por nosotros).
-    3. Rellenaremos las fichas de producto (subir las capturas de pantalla, descripciones, y responder los cuestionarios de clasificación por edades PEGI).
-    4. Google la revisará manualmente (tarda unos 3-7 días) y la publicará.
-*   **Para iOS (Apple App Store):**
-    1. Se requiere tener un Mac (imprescindible para compilar el código con Xcode).
-    2. Pagar la licencia anual de Apple Developer (unos ~99$ AL AÑO).
-    3. Pasar el estricto proceso de revisión humana de Apple, donde son muy exigentes con que la app "no parezca una web cutre" (afortunadamente, QuestFit ya está diseñada de forma premium y pasará sin problema).
+### 📐 ¿Cómo funciona nuestro algoritmo en el código?
+1.  **Evaluación en 4 Pasos:**
+    *   **Paso 1:** Selección de Clase RPG (Guerrero, Explorador o Místico).
+    *   **Paso 2:** Horas al día sentado (Indicador de Sedentarismo extremo).
+    *   **Paso 3:** Días a la semana con ejercicio moderado/intenso.
+    *   **Paso 4:** Nivel de fatiga percibida en sus esfuerzos cotidianos.
+2.  **Clasificación y Multiplicadores de Recompensa:**
+    *   **Perfil Sedentario (Bajo):** Multiplicador de **`x0.5`**. Las misiones reducen sus objetivos a la mitad para evitar frustración (ej. en vez de 50 flexiones, te pide 25).
+    *   **Perfil Activo (Moderado):** Multiplicador de **`x1.0`**. Dificultad estándar y recompensas balanceadas.
+    *   **Perfil Élite (Alto):** Multiplicador de **`x1.5`**. Retos exigentes aumentados en un 50% (ej. 75 flexiones en vez de 50) pero premiados con un 50% más de Oro y XP.
+3.  **Persistencia del Perfil:** El resultado de la clase RPG (`questfit_class`), el multiplicador (`questfit_multiplier`) y la superación del quiz (`questfit_onboarded`) se graban de manera indefinida en el navegador.
 
 ---
 
+## 3. Fase 2: Conteo GPS Real y la Fórmula del Haversine
+
+En los entrenamientos de Cardio (como andar o correr), la aplicación elimina la introducción manual de kilómetros. El chip GPS físico del teléfono toma el mando mediante la API de Geolocalización Web (`navigator.geolocation.watchPosition`).
+
+### 🌍 La Fórmula Matemática del Haversine
+Dado que la Tierra no es un plano sino una esfera tridimensional, no podemos usar el teorema de Pitágoras para calcular la distancia entre dos coordenadas GPS (Latitud y Longitud). Si lo hiciéramos, el error de cálculo sería catastrófico a medida que nos desplazamos.
+
+En su lugar, implementamos la **Fórmula del Haversine**:
+
+$$a = \sin^2\left(\frac{\Delta\text{lat}}{2}\right) + \cos(\text{lat}_1) \cdot \cos(\text{lat}_2) \cdot \sin^2\left(\frac{\Delta\text{lon}}{2}\right)$$
+
+$$c = 2 \cdot \arctan2\left(\sqrt{a}, \sqrt{1-a}\right)$$
+
+$$d = R \cdot c$$
+
+*(Donde $R = 6371\text{ km}$ es el radio medio de la Tierra).*
+
+### 🛠️ Filtros de Calidad de Datos (Software Robusto)
+Los chips GPS de los teléfonos móviles sufren de mucho ruido electromagnético y rebotes de señal (especialmente bajo tejados o árboles). Para evitar que un usuario "entrene" sumando kilómetros sentado en su sofá debido a la deriva del GPS, implementamos dos filtros de calidad en el código:
+1.  **Filtro de Precisión (`accuracy`):** Si la precisión reportada por el satélite es mayor a 50 metros (baja señal), el punto se descarta inmediatamente.
+2.  **Filtro de Ruido de Umbral (`distanceDelta`):**
+    *   Si la distancia entre el punto anterior y el actual es **menor a 2 metros (`0.002 km`)**, se ignora (descarte de temblor del pulso del usuario).
+    *   Si la distancia es **mayor a 500 metros (`0.5 km`)** en un solo segundo, se ignora (descarte de saltos fantasmas por pérdida temporal de señal).
+3.  **Redondeo de Flotantes:** Evitamos los típicos errores de coma flotante binarios de JavaScript usando redondeos estrictos a dos decimales.
+
+---
+
+## 4. La Seguridad en la Web Móvil: Contextos Seguros (Secure Contexts)
+
+Un problema común al probar aplicaciones con sensores en red local es que el GPS devuelva error inmediato. **Esto es una medida de seguridad obligatoria de los navegadores modernos.**
+
+El consorcio internacional W3C obliga a que APIs que accedan a la privacidad física (Geolocalización, Cámara, Micrófono) se ejecuten **únicamente en Contextos Seguros (Secure Contexts)**:
+*   **Seguros por definición:** `http://localhost` (para desarrollo en tu propio PC) y conexiones cifradas bajo **`https://`**.
+*   **Inseguros:** Direcciones de red local `http://192.168.1.XX:5173/`. Al no estar cifrada la comunicación, el navegador del móvil bloquea el sensor por completo para evitar ataques de interceptación (Man-in-the-Middle).
+
+### 💡 Soluciones de producción explicadas ante el tribunal:
+1.  **Vite HTTPS Plugin (Certificados autofirmados):** Configurar Vite para levantar el servidor local bajo `https://` y forzar al móvil a permitir la geolocalización.
+2.  **Chrome Flags (Workaround):** Forzar al navegador móvil a tratar la IP local como un entorno seguro mediante la bandera de desarrollo `chrome://flags/#unsafely-treat-insecure-origin-as-secure`.
+
+---
+
+## 5. Accesibilidad y Experiencia Sensorial Dual (Voz y Haptics)
+
+Un deportista no puede estar mirando la pantalla de su teléfono móvil continuamente mientras corre o realiza flexiones. Esto causaría caídas o una pésima ejecución biomecánica. Para solventarlo, QuestFit integra una **Experiencia Sensorial Dual** basada en APIs nativas de los teléfonos:
+
+### 🎙️ Web Speech API (Síntesis de Voz)
+*   **Uso:** La aplicación te habla a viva voz para avisarte de hitos: *"¡Kilómetro 1 completado! Sigue así, cazador del viento"*, o al cobrar misiones.
+*   **Ventaja Académica:** Es 100% gratuita y funciona **totalmente offline**, ya que utiliza el motor Text-To-Speech (TTS) integrado de forma nativa en el sistema operativo del teléfono (Android/iOS). Ahorra ancho de banda y batería.
+
+### 📳 Vibration API (Respuesta Háptica)
+*   **Uso:** Emisión de pulsos vibratorios físicos diferenciados según la acción.
+    *   Selección del test: Vibraciones sutiles rápidas de confirmación (`vibrate(60)`).
+    *   **Hito del Kilómetro (Milestone):** Un patrón pesado de vibración doble (`vibrate([300, 100, 300])`) para que el usuario sienta en su muslo que ha superado el kilómetro sin tener que sacar el teléfono de su bolsillo.
+*   **Ventaja:** Inclusión de deportistas con discapacidades visuales o auditivas (A11y - Accesibilidad).
+
+---
+
+## 6. Persistencia Local de Datos (LocalStorage vs SharedPreferences)
+
+Actualmente, QuestFit implementa una persistencia local mediante la **API de Web Storage (`localStorage`)**.
+
+### 💻 ¿Cómo funciona y cuál es su equivalencia móvil?
+*   **En la Web (Vite/React):** Los datos se escriben en parejas Clave-Valor en formato de cadenas de texto (`string`). Se guardan en el disco duro del dispositivo y persisten aun cuando el navegador se apaga o el móvil se reinicia.
+*   **En Android Nativo (Kotlin/Java):** El equivalente directo a `localStorage` es la clase **`SharedPreferences`** (o la moderna Jetpack DataStore). Estructuran los datos de la misma manera (Clave-Valor) en un archivo XML privado dentro del almacenamiento de la app.
+*   **En iOS Nativo (Swift):** Su equivalente es la clase **`UserDefaults`**.
+
+---
+
+## 7. Stack Tecnológico Explicado (Para el Tribunal)
+
+Este es el desglose técnico del porqué de cada herramienta elegida, ideal para justificar tu memoria de proyecto:
+
+*   **React 19:** Librería de renderizado declarativo basada en componentes. En lugar de manipular el DOM web directamente (con los lentos e inseguros `document.getElementById`), React usa un **Virtual DOM** en memoria RAM, recalculando las diferencias visuales de forma ultra veloz antes de pintar en la pantalla física.
+*   **TypeScript:** Superconjunto tipado de JavaScript. Añade tipado estricto en tiempo de compilación. En lugar de fallar en producción en el móvil del cliente por una variable mal escrita, TypeScript nos avisa en el editor y frena la compilación hasta que esté 100% libre de errores lógicos de tipos.
+*   **Vite:** El empaquetador (*bundler*) de nueva generación. Utiliza compiladores nativos escritos en Go (`esbuild`) para servir el código en milisegundos en desarrollo, y genera un empaquetado optimizado en producción en menos de 2 segundos.
+*   **Lucide React:** Colección de iconos en formato SVG vectorial. Al ser vectoriales, escalan infinitamente sin pixelarse en pantallas móviles de alta densidad (como pantallas Retina o AMOLED de gama alta) y su peso en bytes es despreciable.
+
+---
+
+## 8. Arquitectura de Código y Mobile-First
+
+El diseño de QuestFit está concebido desde el primer día bajo la premisa **Mobile-First** (El móvil es el dispositivo prioritario):
+
+### 📱 Estructura Responsiva de Contención
+En el archivo `App.tsx`, el contenedor principal está bloqueado de la siguiente manera:
+```tailwindcss
+w-full h-[100dvh] sm:max-w-md sm:h-[90vh] overflow-hidden flex flex-col mx-auto
+```
+*   `h-[100dvh]` (**Dynamic Viewport Height**): Evita que en los navegadores móviles reales (como Safari en iPhone o Chrome en Android), la barra de navegación del navegador tape los botones inferiores de la aplicación, recalculando la altura en tiempo real.
+*   `sm:max-w-md`: En ordenadores de sobremesa, la app se encajona en proporciones de teléfono inteligente (`448px`), centrada en pantalla, manteniendo la experiencia inmersiva.
+*   `BottomNav`: Menú de navegación inferior diseñado para el alcance del dedo pulgar, sustituyendo los clásicos menús de escritorio inaccesibles en pantallas táctiles de una sola mano.
+
+---
+
+## 9. 🗺️ Hoja de Ruta de Desarrollo Incremental (Roadmap DAM)
+
+El desarrollo del proyecto está estructurado para avanzar de forma segura, garantizando la comprensión absoluta de cada pilar informático:
+
+1.  **Fase 1: Persistencia e Historial (LocalStorage):** Guardar el nivel y las monedas en el móvil de forma permanente. *(Completada parcial).*
+2.  **Fase 2: Conteo GPS Real (Haversine):** Automatización de entrenamientos de cardio a través de lecturas del sensor GPS físico del móvil. *(Completada).*
+3.  **Fase 3: Cartografía Cyberpunk (Leaflet.js):** Renderizado de tu ruta neón sobre mapas de OpenStreetMap en pantalla. *(Próximo paso).*
+4.  **Fase 4: El Oráculo Central (Java Spring Boot + DB):** Salto a la nube. Sincronización multiusuario mediante base de datos relacional y APIs REST en Java. *(Futuro).*
+5.  **Fase 5: El Gremio Social (Rankings, Lobbies y Piques):** Piques deportivos en directo y salas compartidas para entrenar con amigos en tiempo real. *(Futuro).*
+6.  **Fase 6: La Forja Multiplataforma (Capacitor & Android Studio):** Envoltura de la aplicación web en un contenedor nativo Gradle para compilar archivos `.apk` firmados e interactuar con smartwatches (WearOS). *(Futuro).*
+
+---
+
+> [!TIP]
+> **Para llevar un control exacto de tus progresos diarios en tu editor de código:**  
+> Consulta nuestro archivo local: [progreso_del_gremio.md](file:///c:/Users/mdpoz/Desktop/Gremio/implementaciones/progreso_del_gremio.md). Allí registramos de forma pormenorizada qué partes del código tenemos listas, a medias y cuáles nos quedan por hacer. ¡Nunca te perderás en el gremio de desarrollo!

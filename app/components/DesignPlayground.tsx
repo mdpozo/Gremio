@@ -53,7 +53,11 @@ export function DesignPlayground() {
             </div>
             <div className="flex flex-col gap-4">
               {sampleQuests.map((quest) => (
-                <QuestCardV1 key={`v1-${quest.id}`} {...quest} />
+                <QuestCardV1 
+                  key={`v1-${quest.id}`} 
+                  {...quest} 
+                  onStartQuest={() => console.log('Iniciar ejercicio en lab')}
+                />
               ))}
             </div>
           </section>

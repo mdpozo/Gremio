@@ -32,10 +32,11 @@ interface QuestCardProps {
   reward: number;
   difficulty: 'easy' | 'medium' | 'hard' | 'epic';
   timeLeft: string;
+  onStartQuest: () => void;
 }
 
 export function QuestCardV1({
-  title, description, category, progress, maxProgress, reward, difficulty, timeLeft,
+  title, description, category, progress, maxProgress, reward, difficulty, timeLeft, onStartQuest,
 }: QuestCardProps) {
 
   // Porcentaje para la barra de progreso: valor entre 0 y 100
@@ -119,8 +120,11 @@ export function QuestCardV1({
           </div>
         </div>
 
-        <button className="w-full mt-4 bg-gradient-to-r from-quest-accent-bg-from to-quest-accent-bg-to hover:from-quest-accent-hover hover:to-quest-accent text-quest-bg font-bold py-2.5 rounded-lg shadow-lg shadow-quest-accent-glow transition-all duration-200 hover:scale-[1.02]">
-          Continuar Misión
+        <button 
+          onClick={onStartQuest}
+          className="w-full mt-4 bg-gradient-to-r from-quest-accent-bg-from to-quest-accent-bg-to hover:from-quest-accent-hover hover:to-quest-accent text-quest-bg font-bold py-2.5 rounded-lg shadow-lg shadow-quest-accent-glow transition-all duration-200 hover:scale-[1.02]"
+        >
+          Iniciar Ejercicio
         </button>
       </div>
     </div>
