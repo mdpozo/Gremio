@@ -1,0 +1,27 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo Squircle Oscuro -->
+  <rect width="100" height="100" rx="22" fill="#141418"/>
+  <rect x="0.75" y="0.75" width="98.5" height="98.5" rx="21.25" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1.5"/>
+
+  <!-- Símbolo Q Deportivo Itálico -->
+  <g transform="skewX(-14) translate(11, 0)">
+    <!-- Anillo Principal -->
+    <path
+      d="M32 20 C20 20 13 28 13 42 V56 C13 70 20 78 34 78 H52 L62 88 C64 90 68 89 69 86 L71 80 C76 75 79 67 79 56 V42 C79 28 72 20 58 20 Z
+         M34 34 H56 C61 34 65 38 65 46 V54 C65 62 61 66 56 66 H34 C29 66 25 62 25 54 V46 C25 38 29 34 34 34 Z"
+      fill="#F8FAFC"
+      fill-rule="evenodd"
+    />
+    <!-- Vector Dinámico de Velocidad / Cola Ámbar Fuego -->
+    <path
+      d="M46 58 L77 87 L86 85 L59 55 Z"
+      fill="#F59E0B"
+    />
+    <path
+      d="M50 58 L78 84"
+      stroke="#FFFFFF"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+  </g>
+</svg>

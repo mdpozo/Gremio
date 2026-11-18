@@ -186,144 +186,144 @@
  * ==========================================
  */
 
-/* 1. Obsidiana (Dark Mode Clásico/QuestFit) */
+/* 1. Obsidiana (Dark Mode Corporativo QUEST / QuestFit) */
 [data-theme='obsidian'], :root {
-  --quest-bg: #0f1115;
-  --quest-header-from: #13151a;
-  --quest-header-via: #16191f;
-  --quest-card-from: #16191f;
-  --quest-card-to: #1a1d24;
+  --quest-bg: #0f0f0f; /* Base unificada QUEST */
+  --quest-header-from: #0f0f0f;
+  --quest-header-via: #15151e;
+  --quest-card-from: #18181b; /* zinc-900 / 0.6 */
+  --quest-card-to: #121215;
   
-  --quest-border: rgba(255, 255, 255, 0.05);
+  --quest-border: rgba(255, 255, 255, 0.08);
   --quest-border-card: rgba(255, 255, 255, 0.08);
-  --quest-border-hover: rgba(184, 144, 91, 0.3); /* copper border */
+  --quest-border-hover: rgba(245, 158, 11, 0.25);
   
-  --quest-accent: #b8905b; /* Muted copper/amber */
-  --quest-accent-glow: rgba(184, 144, 91, 0.2);
-  --quest-accent-bg-from: #a37c4d;
-  --quest-accent-bg-to: #8e6a40;
-  --quest-accent-hover: #b8905b;
+  --quest-accent: #f59e0b; /* Quest Amber / Gold */
+  --quest-accent-glow: rgba(245, 158, 11, 0.2);
+  --quest-accent-bg-from: #f59e0b;
+  --quest-accent-bg-to: #d97706;
+  --quest-accent-hover: #fbbf24;
   
-  --quest-text-title: #e2e8f0;
-  --quest-text-main: #cbd5e1;
-  --quest-text-muted: #64748b;
+  --quest-text-title: #f4f4f5; /* zinc-100 */
+  --quest-text-main: #a1a1aa; /* zinc-400 */
+  --quest-text-muted: #71717a; /* zinc-500 */
 
-  --cat-cardio-from: #991b1b;
-  --cat-cardio-to: #7f1d1d;
-  --cat-strength-from: #1e3a8a;
-  --cat-strength-to: #1e40af;
-  --cat-flex-from: #14532d;
-  --cat-flex-to: #166534;
+  --cat-cardio-from: #b91c1c; /* red-700 */
+  --cat-cardio-to: #991b1b; /* red-800 */
+  --cat-strength-from: #1d4ed8; /* blue-700 */
+  --cat-strength-to: #1e40af; /* blue-800 */
+  --cat-flex-from: #047857; /* emerald-700 */
+  --cat-flex-to: #065f46; /* emerald-800 */
 
-  --diff-easy: #4ade80;
-  --diff-medium: #fbbf24;
-  --diff-hard: #f97316;
-  --diff-epic: #c084fc;
+  --diff-easy: #10b981;
+  --diff-medium: #f59e0b;
+  --diff-hard: #ef4444;
+  --diff-epic: #8b5cf6;
 }
 
 /* 2. Pergamino (Light Mode Elegante) */
 [data-theme='parchment'] {
-  --quest-bg: #fdfbf7; /* Very soft sepia/cream */
-  --quest-header-from: #ffffff;
-  --quest-header-via: #faf9f5;
+  --quest-bg: #f8fafc; /* slate-50 */
+  --quest-header-from: #f8fafc;
+  --quest-header-via: #f8fafc;
   --quest-card-from: #ffffff;
   --quest-card-to: #ffffff;
   
-  --quest-border: rgba(0, 0, 0, 0.06);
-  --quest-border-card: rgba(0, 0, 0, 0.08);
-  --quest-border-hover: rgba(15, 23, 42, 0.15);
+  --quest-border: rgba(0, 0, 0, 0.05);
+  --quest-border-card: rgba(0, 0, 0, 0.05);
+  --quest-border-hover: rgba(0, 0, 0, 0.1);
   
-  --quest-accent: #1e293b; /* Slate 800 */
-  --quest-accent-glow: rgba(30, 41, 59, 0.1);
-  --quest-accent-bg-from: #0f172a;
-  --quest-accent-bg-to: #1e293b;
+  --quest-accent: #0f172a; /* slate-900 */
+  --quest-accent-glow: rgba(15, 23, 42, 0.1);
+  --quest-accent-bg-from: #1e293b;
+  --quest-accent-bg-to: #0f172a;
   --quest-accent-hover: #334155;
   
-  --quest-text-title: #0f172a;
-  --quest-text-main: #334155;
-  --quest-text-muted: #64748b;
+  --quest-text-title: #0f172a; /* slate-900 */
+  --quest-text-main: #475569; /* slate-600 */
+  --quest-text-muted: #94a3b8; /* slate-400 */
 
-  --cat-cardio-from: #fee2e2;
-  --cat-cardio-to: #fecaca;
-  --cat-strength-from: #dbeafe;
-  --cat-strength-to: #bfdbfe;
-  --cat-flex-from: #dcfce7;
-  --cat-flex-to: #bbf7d0;
+  --cat-cardio-from: #f87171;
+  --cat-cardio-to: #ef4444;
+  --cat-strength-from: #60a5fa;
+  --cat-strength-to: #3b82f6;
+  --cat-flex-from: #34d399;
+  --cat-flex-to: #10b981;
 
-  --diff-easy: #15803d;
-  --diff-medium: #b45309;
-  --diff-hard: #c2410c;
-  --diff-epic: #7e22ce;
+  --diff-easy: #059669;
+  --diff-medium: #d97706;
+  --diff-hard: #dc2626;
+  --diff-epic: #7c3aed;
 }
 
 /* 3. Bosque Profundo (Druida/Naturaleza) */
 [data-theme='forest'] {
-  --quest-bg: #111c18; /* Extremely dark desaturated green */
-  --quest-header-from: #14221d;
-  --quest-header-via: #162722;
-  --quest-card-from: #162722;
-  --quest-card-to: #1b302a;
+  --quest-bg: #022c22; /* emerald-950 */
+  --quest-header-from: #022c22;
+  --quest-header-via: #022c22;
+  --quest-card-from: #064e3b; /* emerald-900 */
+  --quest-card-to: #064e3b;
   
-  --quest-border: rgba(255, 255, 255, 0.04);
-  --quest-border-card: rgba(255, 255, 255, 0.06);
-  --quest-border-hover: rgba(123, 156, 139, 0.3);
+  --quest-border: rgba(255, 255, 255, 0.05);
+  --quest-border-card: rgba(255, 255, 255, 0.05);
+  --quest-border-hover: rgba(255, 255, 255, 0.15);
   
-  --quest-accent: #7b9c8b; /* Light sage */
-  --quest-accent-glow: rgba(123, 156, 139, 0.15);
-  --quest-accent-bg-from: #3c5448;
-  --quest-accent-bg-to: #486355;
-  --quest-accent-hover: #507a64;
+  --quest-accent: #34d399; /* emerald-400 */
+  --quest-accent-glow: rgba(52, 211, 153, 0.15);
+  --quest-accent-bg-from: #059669;
+  --quest-accent-bg-to: #047857;
+  --quest-accent-hover: #10b981;
   
-  --quest-text-title: #e2e8f0;
-  --quest-text-main: #d1e0d7;
-  --quest-text-muted: #738a7e;
+  --quest-text-title: #ecfdf5; /* emerald-50 */
+  --quest-text-main: #a7f3d0; /* emerald-200 */
+  --quest-text-muted: #6ee7b7; /* emerald-300 */
 
-  --cat-cardio-from: #7f1d1d;
+  --cat-cardio-from: #b91c1c;
   --cat-cardio-to: #991b1b;
-  --cat-strength-from: #1e3a8a;
+  --cat-strength-from: #1d4ed8;
   --cat-strength-to: #1e40af;
-  --cat-flex-from: #14532d;
-  --cat-flex-to: #166534;
+  --cat-flex-from: #047857;
+  --cat-flex-to: #065f46;
 
-  --diff-easy: #4ade80;
-  --diff-medium: #fbbf24;
-  --diff-hard: #f97316;
-  --diff-epic: #c084fc;
+  --diff-easy: #10b981;
+  --diff-medium: #f59e0b;
+  --diff-hard: #ef4444;
+  --diff-epic: #8b5cf6;
 }
 
 /* 4. Acero Valyrio (Gris/Azul Minimalista) */
 [data-theme='valyrian'] {
-  --quest-bg: #0f172a; /* Slate 900 */
-  --quest-header-from: #1e293b;
-  --quest-header-via: #334155;
-  --quest-card-from: #1e293b;
+  --quest-bg: #020617; /* slate-950 */
+  --quest-header-from: #020617;
+  --quest-header-via: #020617;
+  --quest-card-from: #0f172a; /* slate-900 */
   --quest-card-to: #0f172a;
   
-  --quest-border: rgba(255, 255, 255, 0.06);
-  --quest-border-card: rgba(255, 255, 255, 0.08);
-  --quest-border-hover: rgba(147, 197, 253, 0.3); /* Blue 300 */
+  --quest-border: rgba(255, 255, 255, 0.05);
+  --quest-border-card: rgba(255, 255, 255, 0.05);
+  --quest-border-hover: rgba(255, 255, 255, 0.15);
   
-  --quest-accent: #93c5fd; /* Soft ice blue */
-  --quest-accent-glow: rgba(147, 197, 253, 0.15);
-  --quest-accent-bg-from: #334155;
-  --quest-accent-bg-to: #475569;
-  --quest-accent-hover: #64748b;
+  --quest-accent: #60a5fa; /* blue-400 */
+  --quest-accent-glow: rgba(96, 165, 250, 0.15);
+  --quest-accent-bg-from: #2563eb;
+  --quest-accent-bg-to: #1d4ed8;
+  --quest-accent-hover: #3b82f6;
   
-  --quest-text-title: #f8fafc;
-  --quest-text-main: #e2e8f0;
-  --quest-text-muted: #94a3b8;
+  --quest-text-title: #f8fafc; /* slate-50 */
+  --quest-text-main: #cbd5e1; /* slate-300 */
+  --quest-text-muted: #64748b; /* slate-500 */
 
-  --cat-cardio-from: #7f1d1d;
+  --cat-cardio-from: #b91c1c;
   --cat-cardio-to: #991b1b;
-  --cat-strength-from: #1e3a8a;
+  --cat-strength-from: #1d4ed8;
   --cat-strength-to: #1e40af;
-  --cat-flex-from: #14532d;
-  --cat-flex-to: #166534;
+  --cat-flex-from: #047857;
+  --cat-flex-to: #065f46;
 
-  --diff-easy: #4ade80;
-  --diff-medium: #fbbf24;
-  --diff-hard: #f97316;
-  --diff-epic: #c084fc;
+  --diff-easy: #10b981;
+  --diff-medium: #f59e0b;
+  --diff-hard: #ef4444;
+  --diff-epic: #8b5cf6;
 }
 
 @theme inline {
@@ -359,3 +359,268 @@
   --color-diff-hard: var(--diff-hard);
   --color-diff-epic: var(--diff-epic);
 }
+
+/* 
+ * ==========================================
+ * QUEST BRAND CORPORATE DESIGN SYSTEM
+ * ==========================================
+ */
+
+.glass-panel {
+  background: rgba(24, 24, 27, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+.glass-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(245, 158, 11, 0.3);
+  box-shadow: 0 0 18px rgba(245, 158, 11, 0.15);
+}
+
+.text-quest-gold {
+  color: #c0b060;
+}
+
+.text-quest-violet {
+  color: #8b5cf6;
+}
+
+.text-quest-emerald {
+  color: #10b981;
+}
+
+.text-quest-ember {
+  color: #f97316;
+}
+
+/* 
+ * ==========================================
+ * DYNAMIC THEME ENGINE (Reactive UI)
+ * ==========================================
+ */
+
+/* 
+ * ==========================================
+ * DYNAMIC THEME ENGINE (Reactive UI)
+ * ==========================================
+ */
+
+[data-theme='obsidian'], :root {
+  --theme-outer-bg: #09090c;
+  --theme-chassis: #0f0f0f;
+  --theme-card: rgba(22, 22, 28, 0.95);
+  --theme-card-subtle: #18181b;
+  --theme-border: rgba(255, 255, 255, 0.1);
+  --theme-text-title: #f4f4f5;
+  --theme-text-muted: #9ca3af;
+  --theme-accent: #f59e0b;
+}
+
+[data-theme='parchment'] {
+  --theme-outer-bg: #dcd3c1;
+  --theme-chassis: #faf6ee;
+  --theme-card: #ffffff;
+  --theme-card-subtle: #f2ebd9;
+  --theme-border: rgba(140, 100, 50, 0.22);
+  --theme-text-title: #1c1917;
+  --theme-text-muted: #57534e;
+  --theme-accent: #d97706;
+}
+
+[data-theme='forest'] {
+  --theme-outer-bg: #021a13;
+  --theme-chassis: #052e22;
+  --theme-card: rgba(10, 58, 44, 0.95);
+  --theme-card-subtle: #084736;
+  --theme-border: rgba(52, 211, 153, 0.2);
+  --theme-text-title: #ecfdf5;
+  --theme-text-muted: #6ee7b7;
+  --theme-accent: #10b981;
+}
+
+[data-theme='valyrian'] {
+  --theme-outer-bg: #020617;
+  --theme-chassis: #0b1329;
+  --theme-card: rgba(18, 33, 68, 0.95);
+  --theme-card-subtle: #13244d;
+  --theme-border: rgba(96, 165, 250, 0.22);
+  --theme-text-title: #f8fafc;
+  --theme-text-muted: #94a3b8;
+  --theme-accent: #38bdf8;
+}
+
+/* ── Base reactiva general para todos los temas ── */
+html[data-theme] body,
+html[data-theme] #root {
+  background-color: var(--theme-outer-bg) !important;
+  color: var(--theme-text-title);
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+html[data-theme] .chassis-container {
+  background-color: var(--theme-chassis) !important;
+  border-color: var(--theme-border) !important;
+  transition: background-color 0.35s ease, border-color 0.35s ease;
+}
+
+/* Encabezados y barras de navegación */
+html[data-theme] header,
+html[data-theme] nav,
+html[data-theme] [class*="bg-[#0f0f0f]/95"],
+html[data-theme] [class*="bg-[#0f0f0f]/90"] {
+  background-color: var(--theme-chassis) !important;
+  border-color: var(--theme-border) !important;
+  transition: background-color 0.35s ease, border-color 0.35s ease;
+}
+
+/* Tarjetas y paneles principales */
+html[data-theme] [class*="bg-[#16161c]"],
+html[data-theme] .glass-panel,
+html[data-theme] .glass-card {
+  background-color: var(--theme-card) !important;
+  border-color: var(--theme-border) !important;
+  transition: background-color 0.35s ease, border-color 0.35s ease;
+}
+
+/* Paneles secundarios, casillas de iconos y badges */
+html[data-theme] [class*="bg-[#0f0f0f]"]:not(header):not(nav),
+html[data-theme] [class*="bg-[#18181b]"],
+html[data-theme] [class*="bg-[#141418]"] {
+  background-color: var(--theme-card-subtle) !important;
+  border-color: var(--theme-border) !important;
+  transition: background-color 0.35s ease, border-color 0.35s ease;
+}
+
+/* Diálogos modales y cajones emergentes */
+html[data-theme] [data-slot="dialog-content"],
+html[data-theme] [data-slot="drawer-content"],
+html[data-theme] [class*="bg-[#0f0f13]"] {
+  background-color: var(--theme-card) !important;
+  border-color: var(--theme-border) !important;
+  transition: background-color 0.35s ease, border-color 0.35s ease;
+}
+
+/* Bordes unificados */
+html[data-theme] [class*="border-white/"] {
+  border-color: var(--theme-border) !important;
+  transition: border-color 0.35s ease;
+}
+
+html[data-theme] [class*="divide-white/"] > :not([hidden]) ~ :not([hidden]) {
+  border-color: var(--theme-border) !important;
+}
+
+/* 
+ * ==========================================
+ * AJUSTES EXCLUSIVOS DE ALTA LEGIBILIDAD: PERGAMINO
+ * ==========================================
+ */
+html[data-theme='parchment'] {
+  color-scheme: light;
+}
+
+html[data-theme='parchment'] body,
+html[data-theme='parchment'] #root {
+  background-color: #dcd3c1 !important;
+  background-image: radial-gradient(circle at 50% 0%, #ede6d8 0%, #dcd3c1 85%) !important;
+}
+
+html[data-theme='parchment'] .chassis-container {
+  background-color: #faf6ee !important;
+  border-color: rgba(140, 100, 50, 0.22) !important;
+  box-shadow: 0 10px 45px rgba(100, 70, 30, 0.15) !important;
+}
+
+/* Textos oscuros de alta legibilidad sobre pergamino */
+html[data-theme='parchment'] h1,
+html[data-theme='parchment'] h2,
+html[data-theme='parchment'] h3,
+html[data-theme='parchment'] h4,
+html[data-theme='parchment'] [data-slot="dialog-title"],
+html[data-theme='parchment'] [data-slot="drawer-title"] {
+  color: #1c1917 !important;
+}
+
+html[data-theme='parchment'] p,
+html[data-theme='parchment'] span:not(.keep-white):not([class*="bg-amber-400"]):not([class*="bg-rose"]):not([class*="bg-emerald"]):not([class*="bg-blue"]):not([class*="text-amber"]):not([class*="text-emerald"]):not([class*="text-rose"]):not([class*="text-blue"]):not([class*="text-sky"]):not([class*="text-purple"]) {
+  color: inherit;
+}
+
+html[data-theme='parchment'] :not(button):not([class*="bg-amber-400"]):not([class*="bg-emerald"]):not([class*="bg-rose"]):not([class*="bg-blue"]).text-white {
+  color: #1c1917 !important;
+}
+
+html[data-theme='parchment'] .text-gray-200,
+html[data-theme='parchment'] .text-gray-100 {
+  color: #1c1917 !important;
+}
+
+html[data-theme='parchment'] .text-gray-400,
+html[data-theme='parchment'] .text-gray-300,
+html[data-theme='parchment'] [data-slot="dialog-description"],
+html[data-theme='parchment'] [data-slot="drawer-description"] {
+  color: #57534e !important;
+}
+
+html[data-theme='parchment'] .text-gray-500 {
+  color: #78716c !important;
+}
+
+/* Inputs y cajas de texto */
+html[data-theme='parchment'] input,
+html[data-theme='parchment'] textarea,
+html[data-theme='parchment'] select {
+  background-color: #fbf7ee !important;
+  color: #1c1917 !important;
+  border-color: rgba(140, 100, 50, 0.28) !important;
+}
+
+html[data-theme='parchment'] input::placeholder,
+html[data-theme='parchment'] textarea::placeholder {
+  color: #a8a29e !important;
+}
+
+/* Botones secundarios con fondo translúcido */
+html[data-theme='parchment'] [class*="bg-white/5"],
+html[data-theme='parchment'] [class*="bg-white/10"],
+html[data-theme='parchment'] [class*="bg-white/[0.02]"],
+html[data-theme='parchment'] [class*="bg-white/[0.03]"] {
+  background-color: #f2e9dc !important;
+  border-color: rgba(140, 100, 50, 0.18) !important;
+}
+
+/* Carriles de barras de progreso */
+html[data-theme='parchment'] [role="progressbar"],
+html[data-theme='parchment'] [data-slot="progress"],
+html[data-theme='parchment'] .bg-\[\#0f0f0f\].h-2,
+html[data-theme='parchment'] .bg-\[\#0f0f0f\].h-1\.5,
+html[data-theme='parchment'] .bg-\[\#18181b\].h-2,
+html[data-theme='parchment'] .bg-\[\#18181b\].h-1\.5 {
+  background-color: #e5dcce !important;
+  border-color: rgba(140, 100, 50, 0.18) !important;
+}
+
+/* Drawer overlays */
+html[data-theme='parchment'] [data-slot="dialog-overlay"],
+html[data-theme='parchment'] [data-slot="drawer-overlay"],
+html[data-theme='parchment'] .bg-black\/50,
+html[data-theme='parchment'] .bg-black\/75 {
+  background-color: rgba(28, 25, 23, 0.5) !important;
+}
+
+/* Tirador del drawer */
+html[data-theme='parchment'] .bg-white\/15 {
+  background-color: rgba(140, 100, 50, 0.35) !important;
+}
+
+

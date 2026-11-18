@@ -48,4 +48,9 @@ export default defineConfig({
     react(),       // Soporte para JSX/TSX y Fast Refresh
     tailwindcss(), // Procesamiento de utilidades CSS de Tailwind v4
   ],
+  server: {
+    port: 3000,
+    host: true,
+  },
 });
+

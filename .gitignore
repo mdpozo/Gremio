@@ -7,18 +7,46 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Node dependencies and build
+node_modules/
+dist/
+dist-ssr/
 *.local
 
-# Editor directories and files
+# Environment & credentials
+.env
+.env*.local
+*.pem
+*.key
+*.cert
+
+# Editor & OS files
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
+*.iml
 .DS_Store
+Thumbs.db
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Android & Capacitor native artifacts
+*.apk
+*.aab
+*.dex
+*.class
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/.idea/
+android/captures/
+android/.cxx/
+android/.externalNativeBuild/
+android/app/src/main/assets/public/
+android/app/src/main/assets/capacitor.config.json
+android/app/src/main/assets/capacitor.plugins.json
+capacitor-cordova-android-plugins/
